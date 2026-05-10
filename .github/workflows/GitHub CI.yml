@@ -35,6 +35,7 @@ jobs:
       - run: ./gradlew test
 
   job3:
+    needs: job2
     runs-on: ubuntu-latest
     steps:
       - run: echo "Job 3"
