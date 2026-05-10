@@ -1,3 +1,4 @@
+/* (C)2026 */
 package catcafe;
 
 /** Starter for the cat-café task. */

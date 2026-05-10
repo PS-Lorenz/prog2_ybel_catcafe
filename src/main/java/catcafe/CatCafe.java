@@ -1,3 +1,4 @@
+/* (C)2026 */
 package catcafe;
 
 import static java.util.Objects.requireNonNull;

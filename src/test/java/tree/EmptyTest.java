@@ -1,3 +1,4 @@
+/* (C)2026 */
 package tree;
 
 import static org.junit.jupiter.api.Assertions.*;

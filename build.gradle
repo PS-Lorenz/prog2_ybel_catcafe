@@ -1,0 +1,46 @@
+plugins {
+	id 'java'
+	id 'application'
+	id("com.diffplug.spotless") version "8.4.0"
+}
+application{
+	mainClass = "catcafe.Main"
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testImplementation platform('org.junit:junit-bom:6.0.0')
+	testImplementation 'org.junit.jupiter:junit-jupiter'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+test {
+	useJUnitPlatform()
+}
+spotless {
+	format 'misc', {
+		// define the files to apply `misc` to
+		target '*.gradle', '.gitattributes', '.gitignore'
+
+		// define the steps to apply to those files
+		trimTrailingWhitespace()
+		leadingSpacesToTabs() // or leadingTabsToSpaces. Takes an integer argument if you don't like 4
+		endWithNewline()
+	}
+	java {
+		// don't need to set target, it is inferred from java
+		// eclipse()
+		// apply a specific flavor of google-java-format
+		googleJavaFormat().aosp().reflowLongStrings()
+		// googleJavaFormat('1.17').aosp().reflowLongStrings().skipJavadocFormatting()
+		// fix formatting of type annotations
+		formatAnnotations()
+		licenseHeader '/* (C)$YEAR */'
+	}
+}

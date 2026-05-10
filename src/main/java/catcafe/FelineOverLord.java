@@ -1,9 +1,7 @@
+/* (C)2026 */
 package catcafe;
 
-/**
- * A purring feline overlord.
- *
- */
+/** A purring feline overlord. */
 public final class FelineOverLord implements Comparable<FelineOverLord> {
     private final String name;
     private final int weight;
@@ -11,7 +9,7 @@ public final class FelineOverLord implements Comparable<FelineOverLord> {
     /**
      * Create a new cat.
      *
-     * @param name   name of the cat
+     * @param name name of the cat
      * @param weight weight of the cat
      */
     public FelineOverLord(String name, int weight) {
@@ -34,9 +32,6 @@ public final class FelineOverLord implements Comparable<FelineOverLord> {
 
     @Override
     public String toString() {
-        return "FelineOverLord[" +
-            "name=" + name + ", " +
-            "weight=" + weight + ']';
+        return "FelineOverLord[" + "name=" + name + ", " + "weight=" + weight + ']';
     }
-
 }

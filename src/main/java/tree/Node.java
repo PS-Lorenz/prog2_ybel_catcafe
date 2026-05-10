@@ -1,3 +1,4 @@
+/* (C)2026 */
 package tree;
 
 import static java.util.Objects.requireNonNull;
