@@ -43,4 +43,8 @@ spotless {
 		formatAnnotations()
 		licenseHeader '/* (C)$YEAR */'
 	}
+
+    tasks.named('wrapper') {
+        distributionType = Wrapper.DistributionType.ALL
+    }
 }
