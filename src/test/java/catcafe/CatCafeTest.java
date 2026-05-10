@@ -1,37 +1,38 @@
+/* (C)2026 */
 package catcafe;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 public class CatCafeTest {
 
-
     private CatCafe cafe;
+
     @BeforeEach
     void setUp() {
         cafe = new CatCafe();
     }
 
     @Test
-    void testAddCat(){
+    void testAddCat() {
         // given
-        FelineOverLord cat = new FelineOverLord("Fluffer the Second",4);
+        FelineOverLord cat = new FelineOverLord("Fluffer the Second", 4);
 
         // when
         cafe.addCat(cat);
 
         // then
-        assertEquals(cat,cafe.getCatByName(cat.name()));
+        assertEquals(cat, cafe.getCatByName(cat.name()));
     }
 
     @Test
-    void testGetCatCount(){
+    void testGetCatCount() {
         // given
-        FelineOverLord cat1 = new FelineOverLord("Fluffer the Second",4);
-        FelineOverLord cat2 = new FelineOverLord("Phil",2);
+        FelineOverLord cat1 = new FelineOverLord("Fluffer the Second", 4);
+        FelineOverLord cat2 = new FelineOverLord("Phil", 2);
         FelineOverLord cat3 = new FelineOverLord("Rufus von Hohenzollern", 5);
 
         // when
@@ -40,22 +41,22 @@ public class CatCafeTest {
         cafe.addCat(cat3);
 
         // then
-        assertEquals(3,cafe.getCatCount());
+        assertEquals(3, cafe.getCatCount());
     }
 
     @Test
-    void testEmptyGetCatCount(){
+    void testEmptyGetCatCount() {
         // given
         // when
         // then
-        assertEquals(0,cafe.getCatCount());
+        assertEquals(0, cafe.getCatCount());
     }
 
     @Test
-    void testGetCatByName(){
+    void testGetCatByName() {
         // given
-        FelineOverLord cat1 = new FelineOverLord("Fluffer the Second",4);
-        FelineOverLord cat2 = new FelineOverLord("Phil",2);
+        FelineOverLord cat1 = new FelineOverLord("Fluffer the Second", 4);
+        FelineOverLord cat2 = new FelineOverLord("Phil", 2);
         FelineOverLord cat3 = new FelineOverLord("Rufus von Hohenzollern", 5);
 
         // when
@@ -64,14 +65,14 @@ public class CatCafeTest {
         cafe.addCat(cat3);
 
         // then
-        assertEquals(cat2,cafe.getCatByName(cat2.name()));
+        assertEquals(cat2, cafe.getCatByName(cat2.name()));
     }
 
     @Test
-    void testGetNoCatByName(){
+    void testGetNoCatByName() {
         // given
-        FelineOverLord cat1 = new FelineOverLord("Fluffer the Second",4);
-        FelineOverLord cat2 = new FelineOverLord("Phil",2);
+        FelineOverLord cat1 = new FelineOverLord("Fluffer the Second", 4);
+        FelineOverLord cat2 = new FelineOverLord("Phil", 2);
         FelineOverLord cat3 = new FelineOverLord("Rufus von Hohenzollern", 5);
 
         // when
@@ -84,7 +85,7 @@ public class CatCafeTest {
     }
 
     @Test
-    void testEmptyGetCatByName(){
+    void testEmptyGetCatByName() {
         // given
         // when
         // then
@@ -92,11 +93,11 @@ public class CatCafeTest {
     }
 
     @Test
-    void testFirstGetCatByName(){
+    void testFirstGetCatByName() {
         // given
-        FelineOverLord cat1 = new FelineOverLord("Fluffer the Second",4);
-        FelineOverLord cat2 = new FelineOverLord("Phil",2);
-        FelineOverLord cat3 = new FelineOverLord("Phil",8);
+        FelineOverLord cat1 = new FelineOverLord("Fluffer the Second", 4);
+        FelineOverLord cat2 = new FelineOverLord("Phil", 2);
+        FelineOverLord cat3 = new FelineOverLord("Phil", 8);
         FelineOverLord cat4 = new FelineOverLord("Rufus von Hohenzollern", 5);
 
         // when
@@ -106,15 +107,15 @@ public class CatCafeTest {
         cafe.addCat(cat4);
 
         // then
-        assertEquals(cat2,cafe.getCatByName(cat2.name()));
+        assertEquals(cat2, cafe.getCatByName(cat2.name()));
     }
 
     @Test
-    void testGetFirstCatByMinWeigth(){
+    void testGetFirstCatByMinWeigth() {
         // given
-        FelineOverLord cat1 = new FelineOverLord("Fluffer the Second",4);
-        FelineOverLord cat2 = new FelineOverLord("Phil",2);
-        FelineOverLord cat3 = new FelineOverLord("Phil",8);
+        FelineOverLord cat1 = new FelineOverLord("Fluffer the Second", 4);
+        FelineOverLord cat2 = new FelineOverLord("Phil", 2);
+        FelineOverLord cat3 = new FelineOverLord("Phil", 8);
         FelineOverLord cat4 = new FelineOverLord("Rufus von Hohenzollern", 5);
 
         // when
@@ -124,15 +125,15 @@ public class CatCafeTest {
         cafe.addCat(cat4);
 
         // then
-        assertEquals(cat1,cafe.getCatByWeight(4,10));
+        assertEquals(cat1, cafe.getCatByWeight(4, 10));
     }
 
     @Test
-    void testGetCatByMaxWeigth(){
+    void testGetCatByMaxWeigth() {
         // given
-        FelineOverLord cat1 = new FelineOverLord("Fluffer the Second",4);
-        FelineOverLord cat2 = new FelineOverLord("Phil",2);
-        FelineOverLord cat3 = new FelineOverLord("Phil",8);
+        FelineOverLord cat1 = new FelineOverLord("Fluffer the Second", 4);
+        FelineOverLord cat2 = new FelineOverLord("Phil", 2);
+        FelineOverLord cat3 = new FelineOverLord("Phil", 8);
         FelineOverLord cat4 = new FelineOverLord("Rufus von Hohenzollern", 5);
 
         // when
@@ -142,15 +143,15 @@ public class CatCafeTest {
         cafe.addCat(cat4);
 
         // then
-        assertEquals(cat3,cafe.getCatByWeight(6,9));
+        assertEquals(cat3, cafe.getCatByWeight(6, 9));
     }
 
     @Test
-    void testGetNoCatByWeight(){
+    void testGetNoCatByWeight() {
         // given
-        FelineOverLord cat1 = new FelineOverLord("Fluffer the Second",4);
-        FelineOverLord cat2 = new FelineOverLord("Phil",2);
-        FelineOverLord cat3 = new FelineOverLord("Phil",8);
+        FelineOverLord cat1 = new FelineOverLord("Fluffer the Second", 4);
+        FelineOverLord cat2 = new FelineOverLord("Phil", 2);
+        FelineOverLord cat3 = new FelineOverLord("Phil", 8);
         FelineOverLord cat4 = new FelineOverLord("Rufus von Hohenzollern", 5);
 
         // when
@@ -160,8 +161,6 @@ public class CatCafeTest {
         cafe.addCat(cat4);
 
         // then
-        assertNull(cafe.getCatByWeight(6,8));
+        assertNull(cafe.getCatByWeight(6, 8));
     }
-
-
 }
