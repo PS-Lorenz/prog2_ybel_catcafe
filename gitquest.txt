@@ -1,0 +1,4 @@
+1. Merge funktioniert problemlos. Der "origin/end" commit führt am ende ebenso zum finalen commit wie der "origin/master" commit
+2. Merge hat einen Konflikt in der geänderten Datei. Diesen muss man erst beheben bevor ein commit durchgeführt werden kann.
+3. 1. Merge funktioniert problemlos. 2. Ähnlich wie in 2
+4. Ähnlich wie 2, nur der "ergebnisbaum" sieht anders aus
